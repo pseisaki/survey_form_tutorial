@@ -20,13 +20,30 @@
         color: #ffffff;
     }
 
+    body::before{
+        /*all the properties are necessary!*/
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        /*complex background options*/
+        background-image:
+        linear-gradient(115deg, rgba(41, 38, 51, 0.8), rgba(24, 22, 65, 0.7)), url("images/wallpaper.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     body {
         color:ghostwhite;
         font-family: 'Poppins', sans-serif;
-        background-image: url("images/wallpaper.png");
-        background-repeat: no-repeat;
-        background-size: cover;
+
+
     }
+
 
     #title{
         margin: 50px 0 -10px 0;
@@ -51,23 +68,22 @@
         border-radius: 5px;
         font-size: 20px;
         margin: 50px 200px 50px 200px;
-        background-color: rgba(75, 31, 87, 0.5);
+        background-color: rgba(52, 31, 87, 0.5);
         padding: 30px 40px 30px 40px;
 
     }
-   @media (max-width:1000px) {
-       #survey-form{ margin: 50px 100px 50px 100px;}
-
-   }
 
     .optional{
         font-size: 13px;
         font-weight: 700;
     }
-
+    .form-interactive{
+        line-height:50px;
+    }
     .form-input{
         display: flex;
-        flex-direction: column;}
+        flex-direction: column;
+        line-height:100px;}
 
     .radio-inputs, .checkboxes{
         display: flex;
@@ -76,16 +92,20 @@
     }
 
     .forum-boxes{
-        margin: 15px 0;
         font-size: 16px;
         padding: 10px;
-        width: 250px;
         border: 2px;
-        border-bottom: solid #B580FFFF;
-        background: rgba(48, 30, 54, 0.5);
+        border-bottom: solid #7d5eda;
+        background: rgba(37, 30, 54, 0.5);
         color: white;
         outline: none;
         border-radius: 5px;}
+
+    #comments{
+        resize: vertical;
+        margin-bottom: 20px;
+    }
+
 
 
     .radio-input, .checkbox-input {
@@ -97,12 +117,12 @@
         color:ghostwhite;
         font-size:25px;
         font-weight:500;
-        background-color: #B580FFFF;
+        background-color: #654ac5;
         transition: all 0.5s;
-        position: relative;
         border:none;
         border-radius: 50px;
-        margin:0 100px 0 100px;
+        width:50%;
+        margin: auto;
     }
 
     .btn:hover{
@@ -157,7 +177,7 @@
                 </select>
             </div>
 
-            <div class="form-input">
+            <div class="form-interactive">
                 <p>Would you recommend PurplePizzaApp to a friend?</p>
                 <div class="radio-inputs">
                     <input class="radio-input" type="radio" id="absolutely" name="user-recommend" value="Absolutely">
@@ -173,7 +193,7 @@
                 </div>
             </div>
 
-            <div class="form-input">
+            <div class="form-interactive">
                 <p>What other recipes would you like to see in the app?
                     <span class="optional">(Check all that apply)
                     </span>
